@@ -1,3 +1,5 @@
+使用链表实现mm_alloc， task，timer的管理
+
 16-console-win
 
 tranform char
