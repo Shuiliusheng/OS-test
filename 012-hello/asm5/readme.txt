@@ -75,6 +75,3 @@ start app命令，用于新开一个窗口运行命令
 （使用thread实现）
 
 利用int类型优化了sheet的绘制
-
-修改了initwindow api的问题
-增加了ncstart命令， no cons start
