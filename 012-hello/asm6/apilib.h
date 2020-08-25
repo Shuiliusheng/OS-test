@@ -38,6 +38,7 @@ void api_thread_delete(unsigned int thread_id);
 int api_thread_isover(unsigned int thread_id);
 int api_thread_listen(int func_addr, int stack_addr);
 
+
 /// draw
 int api_initwindow(char *buf,int w, int h, int col_inv,char *title);
 void api_draw_string(int sht, char *str, int x, int y, int color,int bcolor);

@@ -78,3 +78,5 @@ start app命令，用于新开一个窗口运行命令
 
 修改了initwindow api的问题
 增加了ncstart命令， no cons start
+
+增加了使用按键的计算器和绘画板

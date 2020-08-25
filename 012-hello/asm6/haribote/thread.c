@@ -43,6 +43,8 @@ sThread *thread_create(sTASK *ftask, int app_stack, int app_eip, int func_addr)
 	self->cons = ftask->cons;
 	self->fifo = ftask->fifo;
 	self->mousefifo = 0;
+	self->gdt_code = ftask->gdt_code;
+	self->gdt_data = ftask->gdt_data;
 	
 	//如果是event的监听时间，则分配一个mousefifo，用于接收mouse的事件
 	if(func_addr == (int)&thread_event){
