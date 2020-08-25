@@ -1,3 +1,25 @@
+16-console-win
+
+tranform char
+shift+key
+A->a
+enter 遇到边界页面滚动
+mem cls命令 dir命令 type1, 支持FAT阅读
+
+add hlt nas 拆分函数
+
+api 简单的尝试，asmfuction call far retf
+farcall retf 程序调用后返回
+
+利用中断进行api调用，不用动态更改地址
+查找文件名称进行执行
+
+中断进入，edx传参，再决定api函数
+
+console_task->cmd_app->hrb->int40->naskfunc->hrb_api
+
+cs_base 0x0fe8
+
 c语言使用api，更改c语言编译的二进制文件的开头，call retf
 console_task->cmd_app->c.hrb->api_nas->int40->naskfunc->hrb_api
 
@@ -17,7 +39,7 @@ console_task->cmd_app->c.hrb->api_nas->int40->naskfunc->hrb_api
 ctrl+c 结束任务
 获取c编译之后的hrb文件信息，包括段大小，数据段位置内容
 
-测试了expand_segmentsize的可用性，利用malloc系统调用，程序可以自己扩大段大小，注意数据拷贝和程序运行后的释放
+测试了expand_segmentsize的可用性，利用系统调用，程序可以自己扩大段大小，注意数据拷贝和程序运行后的释放
 
 支持malloc api，该函数初始为数据段大小中去除栈空间外的大小。同时该函数支持分配超过freesize的内存块时，
 通过扩大数据段大小来增加可供使用的大小。会进行内存cpy，需要注意mem数据结构中的实地址的变换
@@ -70,40 +92,3 @@ cons w h: 启动一个w*h的console
 3：显示下一屏
 4: 显示完
 else：显示下一行
-
-console command
-1. cls: clear screen
-2. type filename: show file content
-   - enter 2: show half screen new content every times
-   - enter 3: show a whole screen new content every times
-   - enter 4: show content without stop
-   - enter else: show a line new content every times
-3. mem: show system memory information
-4. exit: close console
-5. mkdir dirname: create a directory in current directory
-6. rm filename/dirname: remove file or dir
-	- if file or dir is using(read/write), remove failed
-7. cd :show current directory
-   cd ..:back to last directory level
-   cd dirname: into dir
-8. start cmd/app: open a new console and run cmd or app
-9. ncstart cmd/app: open a new console buf not show and run cmd/app
-10. cons width height: open a new console with width*height
-
-
-file information
-1. hrb: application, input the filename to run directly
-2. c: source code, can use type command to show the detail
-
-testmem	: test the memory api correctness
-testfile: test the file operator api correctness
-testget	: test the input api correctness
-testput	: test the output api correctness
-te_timer: test the timer api correctness
-test	: test the multithread api correctness
-testdraw: test the draw api and eventlisten api correctness
-
-readfile: function for reading a file
-wfile	: function for writing a file
-cal		: a calculator with interface(can push button)
-painter	: a painter application, can choose color and draw with different line
