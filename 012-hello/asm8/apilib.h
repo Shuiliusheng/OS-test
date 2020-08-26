@@ -44,5 +44,6 @@ int api_initwindow(char *buf,int w, int h, int col_inv,char *title);
 void api_draw_string(int sht, char *str, int x, int y, int color,int bcolor);
 void api_draw_block(int sht, int x, int y, int w, int h, int color);
 void api_draw_refresh(int sht, int x, int y, int w, int h);
+void api_closewindow(int sht);
 
 

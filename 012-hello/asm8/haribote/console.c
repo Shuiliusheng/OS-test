@@ -274,6 +274,10 @@ int hrb_api(int edi, int esi, int ebp, int esp, int ebx, int edx, int ecx, int e
 		//edi: h
 		sheet_refresh((sSHEET *)ebx, eax, ecx, eax+esi, ecx+edi);
 	}
+	else if(edx == 35){//close sht
+		//eax: sht
+		sheet_free((sSHEET *)eax);
+	}
 	else if(edx == 34){//event
 		//eax: eip
 		//ecx: stack_addr
@@ -1018,7 +1022,7 @@ char wait_key_input(int eax)
 	while(1){
 		io_cli();
 		if(fifo32_status(task->fifo)==0){
-			if(eax&0x01 == 0){
+			if( (eax&0x01) == 0){
 				io_sti();
 				return -1;
 			}

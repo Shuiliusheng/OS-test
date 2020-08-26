@@ -4,7 +4,7 @@
 [FILE "api_draw.nas"]
 
 		GLOBAL	_api_initwindow,_api_draw_string
-		global _api_draw_block,_api_draw_refresh
+		global _api_draw_block,_api_draw_refresh, _api_closewindow
 
 [SECTION .text]
 
@@ -24,6 +24,12 @@ _api_initwindow:
 	pop esi
 	pop ebx
 	ret			;
+	
+_api_closewindow: ;void api_closewindow(int sht);
+	mov eax,[esp+4]
+	mov edx,35
+	int 0x40
+	ret
 	
 ; void api_draw_string(int sht, char *str, int x, int y, int color,int bcolor);
 _api_draw_string:	

@@ -94,3 +94,5 @@ cons w h: 启动一个w*h的console
 else：显示下一行
 
 修改了鼠标事件类型的bug
+
+增加了closewindow的api接口，同时修改了getchar(0)的bug

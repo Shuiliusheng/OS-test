@@ -1,0 +1,48 @@
+text size :   1085(0x0043D)
+data size :     10(0x0000A)
+bss  size :      0(0x00000)
+
+0x00000024 : (.text)
+0x00000024 : _testfuc1
+0x00000096 : _testfuc2
+0x00000108 : _HariMain
+0x00000307 : _api_file_open
+0x00000307 : (.text)
+0x0000031E : _api_file_close
+0x0000032A : _api_file_read
+0x00000345 : _api_file_write
+0x00000360 : _api_file_eof
+0x0000036C : _api_file_seek
+0x00000382 : _api_file_tell
+0x0000038E : _api_initmalloc
+0x0000038E : (.text)
+0x000003A2 : _api_malloc
+0x000003BA : _api_free
+0x000003D2 : _api_freesize
+0x000003E6 : _api_puts
+0x000003E6 : (.text)
+0x000003F5 : _api_return
+0x000003F5 : (.text)
+0x000003FC : _api_thread_create
+0x000003FC : (.text)
+0x00000418 : _api_thread_run
+0x00000424 : _api_thread_sleep
+0x00000430 : _api_thread_delete
+0x0000043C : _api_thread_isover
+0x00000448 : _api_thread_listen
+0x00000458 : (.text)
+0x00000458 : _HariStartup
+0x00000000 : (.data)
+0x00000000 : (.data)
+0x00000000 : (.data)
+0x00000000 : (.data)
+0x00000000 : (.data)
+0x00000000 : (.data)
+0x00000400 : (.data)
+0x00000000 : (.bss)
+0x00000000 : (.bss)
+0x00000000 : (.bss)
+0x00000000 : (.bss)
+0x00000000 : (.bss)
+0x00000000 : (.bss)
+0x00000000 : (.bss)

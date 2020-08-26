@@ -16,7 +16,7 @@ default :
 haribote.img :  haribote/ipl10.bin  haribote/haribote.sys crack1/crack1.hrb crack2/crack2.hrb Makefile \
 				testmem/testmem.hrb testfile/testfile.hrb testget/testget.hrb testput/testput.hrb \
 				readfile/readfile.hrb wfile/wfile.hrb test/test.hrb te_timer/te_timer.hrb \
-				testdraw/testdraw.hrb testcal/cal.hrb painter/painter.hrb
+				testdraw/testdraw.hrb testcal/cal.hrb painter/painter.hrb painter1/painter1.hrb
 	$(EDIMG)   imgin:../../z_tools/fdimg0at.tek \
 		wbinimg src:haribote/ipl10.bin len:512 from:0 to:0 \
 		copy from:haribote/haribote.sys to:@: \
@@ -31,6 +31,7 @@ haribote.img :  haribote/ipl10.bin  haribote/haribote.sys crack1/crack1.hrb crac
 		copy from:wfile/wfile.hrb to:@: \
 		copy from:testcal/cal.hrb to:@: \
 		copy from:painter/painter.hrb to:@: \
+		copy from:painter1/painter1.hrb to:@: \
 		copy from:testmem/testmem.c to:@: \
 		copy from:testfile/testfile.c to:@: \
 		copy from:testget/testget.c to:@: \
@@ -42,6 +43,7 @@ haribote.img :  haribote/ipl10.bin  haribote/haribote.sys crack1/crack1.hrb crac
 		copy from:wfile/wfile.c to:@: \
 		copy from:testcal/cal.c to:@: \
 		copy from:painter/painter.c to:@: \
+		copy from:painter1/painter1.c to:@: \
 		copy from:apilib.h to:@: \
 		copy from:intro.txt to:@: \
 		imgout:haribote.img
@@ -72,6 +74,7 @@ full :
 	$(MAKE) -C testdraw
 	$(MAKE) -C testcal
 	$(MAKE) -C painter
+	$(MAKE) -C painter1
 	$(MAKE) haribote.img
 
 run_full :
@@ -109,4 +112,5 @@ clean_full :
 	$(MAKE) -C testdraw	clean
 	$(MAKE) -C testcal	clean
 	$(MAKE) -C painter	clean
+	$(MAKE) -C painter1	clean
 	

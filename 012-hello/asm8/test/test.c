@@ -1,6 +1,7 @@
 #include "apilib.h"
 #include <string.h>
 //thread test
+
 void testfuc1(int addr)
 {
 	int fd = api_file_open((char*)addr,'w');
@@ -45,7 +46,6 @@ void HariMain(void)
 {	
 	int i;
 	char buf[50];
-
 	api_initmalloc();
 	char *stack1 = api_malloc(1024);
 	char *stack2 = api_malloc(1024);
